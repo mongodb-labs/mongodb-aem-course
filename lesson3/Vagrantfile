@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
       server.vm.provider "virtualbox" do |vb|
 		vb.customize ["modifyvm", :id, "--cpus", "2"]
         vb.name = "mongod#{i}"
-        vb.memory = 4096
+        vb.memory = 2048
       end
       server.vm.hostname = "mongod#{i}.mongodb.course"
       server.vm.network :private_network, ip: "192.168.15.10#{i}"
