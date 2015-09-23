@@ -20,9 +20,9 @@ function install_mongod(){
 	sudo apt-get install -y mongodb-enterprise-server mongodb-enterprise-shell
 
 	sudo killall mongod
-	mkdir -p /vagrant/data
-	chmod -R 777 /vagrant/data
-	chown -R mongodb:mongodb /vagrant/data
+	mkdir -p /home/vagrant/data
+	chmod -R 777 /home/vagrant/data
+	chown -R mongodb:mongodb /home/vagrant/data
 	
 }
 
