@@ -127,3 +127,40 @@ screen -a
 java -Xmx2g -XX:MaxPermSize=512m -jar /home/vagrant/aem/cq-author-p4503.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.15.100:30000,192.168.15.101:30000,192.168.15.102:30000/?replicaSet=AEM"
 ```
 to detach don't forget to press `ctrl + a + d` keys
+
+
+
+### Boot AEM Instance w/ JMX access
+
+Now we want to boot up our AEM instance (just one for now)
+```sh
+vagrant ssh aem1
+screen -a
+# raises the instance enabling access from the jmxremote console
+java -Dcom.sun.management.jmxremote.port=8463 -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false -Xmx2g -XX:MaxPermSize=512m -jar /home/vagrant/aem/cq-author-p4503.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.15.100:30000,192.168.15.101:30000,192.168.15.102:30000/?replicaSet=AEM"
+```
+to detach don't forget to press `ctrl + a + d` keys
+
+
+
+### Monitoring Tools
+
+For monitoring MongoDB instances our distribution comes with a few different shell based tools:
+
+#### Mongostat
+
+```sh
+mongostat --host 192.168.15.100:30000
+```
+
+To have the full view of all nodes in a Replica Set you need pass `--discover`
+
+```sh
+mongostat --host 192.168.15.100:30000
+```
+
+#### Mongotop
+
+```sh
+mongotop --host 192.168.15.100:30000
+```
