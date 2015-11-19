@@ -27,7 +27,7 @@ function install_aem(){
 	echo "Copy cq-author from shared folder"
 	ls /vagrant
 	cp /vagrant/cq-author-p4503.jar $AEM_ROOT/.
-
+	chwon vagrant $AEM_ROOT/cq-author-p4503.jar 
 	echo "RUN -> java -Xmx2g -XX:MaxPermSize=512m -jar $AEM_ROOT/cq-author-p4503.jar -r crx3,crx3mongo -Doak.mongo.uri=\"$MONGODB_URI\""
 }
 
