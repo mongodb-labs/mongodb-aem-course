@@ -18,7 +18,7 @@ git checkout lesson3
 Raise 3 virtual machines using vagrant:
 
 ```sh
-cd lesson3
+cd lesson3/MongoDB
 vagrant up
 ```
 
@@ -101,7 +101,7 @@ To do that we just need the following instructions:
 Once on *mongodb-aem-course* main repository folder we need to do the following:
 
 ```sh
-cd AEM
+cd ../AEM
 vagrant status
 ```
 
@@ -140,7 +140,6 @@ screen -a
 java -Dcom.sun.management.jmxremote.port=8463 -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false -Xmx2g -XX:MaxPermSize=512m -jar /home/vagrant/aem/cq-author-p4503.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.15.100:30000,192.168.15.101:30000,192.168.15.102:30000/?replicaSet=AEM"
 ```
 to detach don't forget to press `ctrl + a + d` keys
-
 
 
 ### Monitoring Tools
