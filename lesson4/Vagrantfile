@@ -1,0 +1,36 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.box_check_update = false
+  config.vm.synced_folder "shared/", "/vagrant"
+
+  (0..2).each do |i|
+
+    config.vm.define "mongod-prod#{i}" do |server|
+      #server.vm.synced_folder "shared/", "/vagrant/shared"
+      server.vm.provider "virtualbox" do |vb|
+	      vb.customize ["modifyvm", :id, "--cpus", "2"]
+        vb.name = "mongod-prod#{i}"
+        vb.memory = 2048
+      end
+      server.vm.hostname = "mongod-prod#{i}.mongodb.course"
+      server.vm.network :private_network, ip: "192.168.13.10#{i}"
+      server.vm.provision :shell, path: "provision-mongod", args: ENV['ARGS']
+    end
+  end
+
+  (0..1).each do |i|
+    config.vm.define "aem-prod#{i}" do |server|
+      server.vm.provider "virtualbox" do |vb|
+        vb.customize ["modifyvm", :id, "--cpus", "2"]
+          vb.name = "aem-prod#{i}"
+          vb.memory = 2048
+        end
+      server.vm.hostname = "aem-prod#{i}.mongodb.course"
+      server.vm.network :private_network, ip: "192.168.13.11#{i}"
+      server.vm.provision :shell, path: "provision-aem", args: ENV['ARGS']
+    end
+  end
+end
