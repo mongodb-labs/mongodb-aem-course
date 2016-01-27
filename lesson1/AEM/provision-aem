@@ -16,20 +16,19 @@ function config(){
 }
 
 function install_aem(){
-	export AEM_ROOT=/home/vagrant/aem
+  export AEM_JAR=/vagrant/cq-author-p4502.jar
+  export AEM_ROOT=/home/vagrant/aem
 	export AEM_USER=aem
-	export AEM_JAR=/vagrant/cq-author-p4502.jar
 	##TODO need to change this for a more suitable setting
 	export MONGODB_URI=mongodb://192.168.14.100
-	echo "Create folders under shared vagrant dir"
+	echo "Create folders under shared $AEM_ROOT dir"
 	mkdir $AEM_ROOT
-	chmod 777 $AEM_ROOT 
-
-	echo "RUN -> java -Xmx2g -XX:MaxPermSize=512m -jar $AEM_JAR -r crx3,crx3mongo -Doak.mongo.uri=\"$MONGODB_URI\""
+	chmod 777 $AEM_ROOT
+	echo "RUN -> java -Xmx2g -XX:MaxPermSize=512m -jar $AEM_JAR -r crx3,crx3mongo -Doak.mongo.uri=\"$MONGODB_URI\" -nobrowser -fork"
 }
 
 function update_repo(){
-	echo "Update Repositoryies"
+	echo "Update Repositories"
 	sudo apt-get update -y
 }
 
@@ -38,8 +37,6 @@ function install_java(){
 	wget --no-check-certificate https://github.com/aglover/ubuntu-equip/raw/master/equip_java7_64.sh
 	bash equip_java7_64.sh
 }
-
-
 
 config
 update_repo
