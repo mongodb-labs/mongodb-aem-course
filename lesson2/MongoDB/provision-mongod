@@ -17,13 +17,12 @@ function config(){
 
 function install_mongod(){
 	echo "Install MongoDB Enterprise"
-	sudo apt-get install -y mongodb-enterprise-server mongodb-enterprise-shell
+	sudo apt-get install -y --force-yes mongodb-enterprise-server mongodb-enterprise-shell
 
 	sudo killall mongod
 	mkdir -p /home/vagrant/data
 	chmod -R 777 /home/vagrant/data
 	chown -R mongodb:mongodb /home/vagrant/data
-
 }
 
 function update_repo(){
