@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+#
+# Bash script for provisioning the AEM author instances
+
+set -e
+set -x
+
+function config(){
+	export CLIENT_IP_ADDR=`ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}' | tail -1`
+	export CLIENT_FQDN=`hostname`
+	export CLIENT_NAME=`hostname | cut -d. -f 1 | tr '[:upper:]' '[:lower:]'`
+	echo "Configuring /etc/hosts ..."
+	echo "127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4" > /etc/hosts
+	echo "::1       localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
+	echo "$CLIENT_IP_ADDR    $CLIENT_FQDN $CLIENT_NAME" >> /etc/hosts
+}
+
+function install_jcr(){
+	export SHARED_FOLDER=/vagrant
+	export JCR_PORT=7979
+	export MONGODB_DBNAME=oak
+	export MONGODB_HOST=192.168.11.100
+	export MONGODB_PORT=27017
+
+	echo "Create folders under shared vagrant dir"
+	mkdir /home/vagrant/jcr
+	chmod 777 /home/vagrant/jcr
+
+	echo "RUN -> java -jar $SHARED_FOLDER/oak-run-1.4-SNAPSHOT.jar server http://localhost:$JCR_PORT Oak-Mongo --db $MONGODB_DBNAME --host $MONGO_HOST --port $MONGODB_PORT"
+}
+
+function update_repo(){
+	echo "Update Repositoryies"
+	sudo apt-get update -y
+}
+
+function install_java(){
+	echo "Install Java"
+	wget --no-check-certificate https://github.com/aglover/ubuntu-equip/raw/master/equip_java7_64.sh
+	bash equip_java7_64.sh
+}
+
+config
+update_repo
+install_java
+install_aem
+echo "DONE"
