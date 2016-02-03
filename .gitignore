@@ -8,7 +8,7 @@
 # Vagrant stuff
 acceptance_config.yml
 boxes/*
-/.vagrant
+.vagrant
 /website/docs/.vagrant
 /website/www/.vagrant
 /vagrant-spec.config.rb
@@ -54,3 +54,6 @@ website/www/.sass-cache
 website/www/build
 website/www/Rakefile
 exec/
+
+# Override for this repo
+!lesson1/JCR/shared/*.jar
