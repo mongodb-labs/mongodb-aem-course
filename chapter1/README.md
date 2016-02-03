@@ -1,4 +1,4 @@
-# Welcome to Week1
+# Welcome to Chapter 1
 
 So its time to get ready for week 1 exercises, great!
 
