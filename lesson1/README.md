@@ -68,7 +68,7 @@ For this particular setup we are going to use `screen` to run our instance of oa
 ```bash
 vagrant ssh jcr
 screen -a
-java -jar ...
+java -jar /vagrant/oak-run-1.4-SNAPSHOT.jar server http://localhost:7979 Oak-Mongo --db oak --host 192.168.11.100 --port 27017
 ```
 To detach from the loaded screen just press `ctrl+a+d`
 
