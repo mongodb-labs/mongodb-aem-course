@@ -23,10 +23,10 @@ function install_jcr(){
 	export MONGODB_PORT=27017
 
 	echo "Create folders under shared vagrant dir"
-	mkdir /home/vagrant/jcr
+	mkdir -p /home/vagrant/jcr
 	chmod 777 /home/vagrant/jcr
 
-	echo "RUN -> java -jar $SHARED_FOLDER/oak-run-1.4-SNAPSHOT.jar server http://localhost:$JCR_PORT Oak-Mongo --db $MONGODB_DBNAME --host $MONGO_HOST --port $MONGODB_PORT"
+	echo "RUN -> java -jar $SHARED_FOLDER/oak-run-1.4-SNAPSHOT.jar server http://localhost:$JCR_PORT Oak-Mongo --db $MONGODB_DBNAME --host $MONGODB_HOST --port $MONGODB_PORT"
 }
 
 function update_repo(){
@@ -43,5 +43,5 @@ function install_java(){
 config
 update_repo
 install_java
-install_aem
+install_jcr
 echo "DONE"
