@@ -31,7 +31,7 @@ Verify instance status
 ```bash
 vagrant status mongod
 ```
-## Setup MongoDB Instance
+## Launch MongoDB Instance
 Now that we have an running vm dedicated to MongoDB is time to setup the instance
 
 Let's check if `mongod` is properly installed
@@ -62,7 +62,7 @@ vagrant status jcr
 ```
 If all went well now it's time to setup the JCR
 
-## Setup JCR Standalone
+## Launch JCR Standalone
 We need to install in the `jcr` instance oak-run and point it to the previously instantiated `mongod` instance.
 For this particular setup we are going to use `screen` to run our instance of oak-run on the background.
 ```bash
@@ -103,7 +103,7 @@ Verify instance status
 vagrant status aem
 ```
 
-## Setup AEM Instance
+## Launch AEM Instance
 Once we have an environment for our AEM installation, its time to launch our `author` instance
 
 ```bash
@@ -112,5 +112,6 @@ vagrant ssh
 screen -a
 java -Xmx2g -XX:MaxPermSize=512m -jar /vagrant/cq-author-p4502.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.11.100:27017"
 ```
+To detach from the loaded screen just press ctrl+a+d
 
 [webdav]: https://en.wikipedia.org/wiki/WebDAV
