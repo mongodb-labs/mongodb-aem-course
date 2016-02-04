@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     server.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--cpus", "2"]
       vb.name = "aem"
-      vb.memory = 4096
+      vb.memory = 3072
     end
   	server.vm.hostname = "aem.mongodb.course"
   	server.vm.network :private_network, ip: "192.168.11.101"
