@@ -1,17 +1,18 @@
 # Welcome to Chapter 1
 
-So its time to get ready for week 1 exercises, great!
+So its time to get ready for chapter 1 exercises.
 
 Let's get start with a brief overview of this handout:
-- You will find 2 folders
--- AEM - contains all files required to set the AEM instances environment
--- MongoDB - same has the above but for the MongoDB instances
+- You will find the following folders:
+  - **AEM** - contains all files required to set the AEM instances environment
+  - **MongoDB** - same has the above but for the MongoDB instances
+  - **JCR** - environment setup to launch Apache Jackrabbit Oak standalone process
 - Each folder will boot different virtual machines so we can isolate the instances
 - If you are following the lesson videos you might find some variations from the video examples and the configuration that you will find on your environment (mostly differences on ip addresses)
 
-You will also find the baseline commands in this file
+You will also find all command helpers in this file
 
-## Week 1 folder
+## Chapter 1 folder
 
 ```sh
 > ls .
@@ -113,5 +114,17 @@ screen -a
 java -Xmx2g -XX:MaxPermSize=512m -jar /vagrant/cq-author-p4502.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.11.100:27017"
 ```
 To detach from the loaded screen just press ctrl+a+d
+
+## Stop Instances
+Make sure to stop the vagrant VM's after you finished the exercises.
+```bash
+cd MongoDB
+vagrant halt
+cd ../AEM
+vagrant halt
+cd ../JCR
+vagrant halt
+```
+
 
 [webdav]: https://en.wikipedia.org/wiki/WebDAV
