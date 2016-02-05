@@ -19,8 +19,8 @@ You will also find all command helpers in this file
 AEM
 README.md
 lesson1
-preflight.sh
 ```
+
 
 ## Boot MongoDB Environment
 Raise one virtual machine dedicated to MongoDB standalone instance
@@ -92,6 +92,11 @@ This will be a bit different for each version of the OS that you might be runnin
   - user = `admin`
   - password = `admin`
 
+## Install AEM software on local author folder
+To boot the AEM environment and to have a correct installation you need to copy your version of AEM and place it under the following folder:
+```bash
+cp YOUR_AEM_VERSION_JAR AEM/author/cq-author-p4502.jar
+```
 
 ## Boot AEM Environment
 Raise one virtual machine dedicated to AEM standalone instance
