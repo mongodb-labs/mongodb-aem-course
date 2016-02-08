@@ -41,12 +41,6 @@ As previously mentioned you will need to place your AEM jar file on a specific l
 
 Once you have it placed there and all the other requirements meet we are ready to start placing on this root location all the different week handouts.
 
-
-
-
-[0]: https://university.mongodb.com/courses/M212/about
-[preflight.sh]: preflight.sh
-=======
 # Welcome to Chapter 1 
 For detailed exercise instructions you should check the pdf file that is available on folder
 ```
@@ -56,3 +50,7 @@ Where you will find all instructions to help you accomplish the homework assignm
 
 ## Local AEM Install
 For the full extent of the course we require you to have a local copy of your AEM software version placed under the folder `AEM/author` with the name `cq-author-p4502.jar`
+
+
+[0]: https://university.mongodb.com/courses/M212/about
+[preflight.sh]: preflight.sh
