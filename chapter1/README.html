@@ -1,0 +1,628 @@
+<!DOCTYPE html><html><head><title>pdf_preview</title>  <meta charset="utf-8"><style>.markdown-katex-preview {
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  color: #555;
+  background-color: #fff;
+  margin: 10px 13px 10px 13px;
+  padding: 25px;
+}
+.markdown-katex-preview > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-katex-preview > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-katex-preview a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+.markdown-katex-preview a {
+  color: #08c;
+  text-decoration: none;
+}
+.markdown-katex-preview a:hover {
+  color: #0050a3;
+  text-decoration: none;
+}
+.markdown-katex-preview a img {
+  border: none;
+}
+.markdown-katex-preview .absent {
+  color: #c00;
+}
+.markdown-katex-preview .anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-katex-preview .anchor:focus {
+  outline: none;
+}
+.markdown-katex-preview h1,
+.markdown-katex-preview h2,
+.markdown-katex-preview h3,
+.markdown-katex-preview h4,
+.markdown-katex-preview h5,
+.markdown-katex-preview h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-katex-preview h1 .octicon-link,
+.markdown-katex-preview h2 .octicon-link,
+.markdown-katex-preview h3 .octicon-link,
+.markdown-katex-preview h4 .octicon-link,
+.markdown-katex-preview h5 .octicon-link,
+.markdown-katex-preview h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-katex-preview h1:hover .anchor,
+.markdown-katex-preview h2:hover .anchor,
+.markdown-katex-preview h3:hover .anchor,
+.markdown-katex-preview h4:hover .anchor,
+.markdown-katex-preview h5:hover .anchor,
+.markdown-katex-preview h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  text-decoration: none;
+}
+.markdown-katex-preview h1:hover .anchor .octicon-link,
+.markdown-katex-preview h2:hover .anchor .octicon-link,
+.markdown-katex-preview h3:hover .anchor .octicon-link,
+.markdown-katex-preview h4:hover .anchor .octicon-link,
+.markdown-katex-preview h5:hover .anchor .octicon-link,
+.markdown-katex-preview h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-katex-preview h1 tt,
+.markdown-katex-preview h2 tt,
+.markdown-katex-preview h3 tt,
+.markdown-katex-preview h4 tt,
+.markdown-katex-preview h5 tt,
+.markdown-katex-preview h6 tt,
+.markdown-katex-preview h1 code,
+.markdown-katex-preview h2 code,
+.markdown-katex-preview h3 code,
+.markdown-katex-preview h4 code,
+.markdown-katex-preview h5 code,
+.markdown-katex-preview h6 code {
+  font-size: inherit;
+}
+.markdown-katex-preview h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-katex-preview h1 .anchor {
+  line-height: 1;
+}
+.markdown-katex-preview h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-katex-preview h2 .anchor {
+  line-height: 1;
+}
+.markdown-katex-preview h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-katex-preview h3 .anchor {
+  line-height: 1.2;
+}
+.markdown-katex-preview h4 {
+  font-size: 1.25em;
+}
+.markdown-katex-preview h4 .anchor {
+  line-height: 1.2;
+}
+.markdown-katex-preview h5 {
+  font-size: 1em;
+}
+.markdown-katex-preview h5 .anchor {
+  line-height: 1.1;
+}
+.markdown-katex-preview h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-katex-preview h6 .anchor {
+  line-height: 1.1;
+}
+.markdown-katex-preview p,
+.markdown-katex-preview blockquote,
+.markdown-katex-preview ul,
+.markdown-katex-preview ol,
+.markdown-katex-preview dl,
+.markdown-katex-preview table,
+.markdown-katex-preview pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-katex-preview hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-katex-preview ul,
+.markdown-katex-preview ol {
+  padding-left: 2em;
+}
+.markdown-katex-preview ul.no-list,
+.markdown-katex-preview ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+.markdown-katex-preview ul ul,
+.markdown-katex-preview ul ol,
+.markdown-katex-preview ol ol,
+.markdown-katex-preview ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-katex-preview li {
+  margin-bottom: 0;
+}
+.markdown-katex-preview li > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-katex-preview dl {
+  padding: 0;
+}
+.markdown-katex-preview dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-katex-preview dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-katex-preview blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+  margin-left: 0;
+}
+.markdown-katex-preview blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-katex-preview blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-katex-preview table {
+  margin: 10px 0 15px 0;
+  border-collapse: collapse;
+}
+.markdown-katex-preview table th {
+  font-weight: bold;
+}
+.markdown-katex-preview table td,
+.markdown-katex-preview table th {
+  border: 1px solid #ddd;
+  padding: 3px 10px;
+}
+.markdown-katex-preview table th {
+  padding: 5px 10px;
+}
+.markdown-katex-preview img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-katex-preview .emoji {
+  max-width: none;
+}
+.markdown-katex-preview span.frame {
+  display: block;
+  overflow: hidden;
+}
+.markdown-katex-preview span.frame > span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+.markdown-katex-preview span.frame span img {
+  display: block;
+  float: left;
+}
+.markdown-katex-preview span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: #333;
+}
+.markdown-katex-preview span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+.markdown-katex-preview span.align-center > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+.markdown-katex-preview span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+.markdown-katex-preview span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+.markdown-katex-preview span.align-right > span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+.markdown-katex-preview span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+.markdown-katex-preview span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+.markdown-katex-preview span.float-left span {
+  margin: 13px 0 0;
+}
+.markdown-katex-preview span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+.markdown-katex-preview span.float-right > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+.markdown-katex-preview code,
+.markdown-katex-preview tt {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  color: #4d4d4c;
+}
+.markdown-katex-preview code:before,
+.markdown-katex-preview tt:before,
+.markdown-katex-preview code:after,
+.markdown-katex-preview tt:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-katex-preview code br,
+.markdown-katex-preview tt br {
+  display: none;
+}
+.markdown-katex-preview del code {
+  text-decoration: inherit;
+}
+.markdown-katex-preview pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-katex-preview .highlight {
+  margin-bottom: 16px;
+}
+.markdown-katex-preview .highlight pre,
+.markdown-katex-preview pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-katex-preview .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-katex-preview pre {
+  word-wrap: normal;
+}
+.markdown-katex-preview pre code,
+.markdown-katex-preview pre tt {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-katex-preview pre code:before,
+.markdown-katex-preview pre tt:before,
+.markdown-katex-preview pre code:after,
+.markdown-katex-preview pre tt:after {
+  content: normal;
+}
+.markdown-katex-preview kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+.markdown-katex-preview .newpage {
+  page-break-before: always;
+}
+@media screen and (min-width: 914px) {
+  .markdown-katex-preview {
+    width: 854px;
+    margin: 10px auto;
+    overflow-y: scroll;
+    background: #fdfdfd;
+  }
+}
+@media print {
+  .markdown-katex-preview {
+    background: #fff;
+  }
+  .markdown-katex-preview h1,
+  .markdown-katex-preview h2,
+  .markdown-katex-preview h3,
+  .markdown-katex-preview h4,
+  .markdown-katex-preview h5,
+  .markdown-katex-preview h6 {
+    color: #222;
+  }
+  .markdown-katex-preview blockquote {
+    color: #777;
+  }
+  .markdown-katex-preview table,
+  .markdown-katex-preview pre {
+    page-break-inside: avoid;
+  }
+  .markdown-katex-preview pre {
+    border: 2px solid #f6f6f6;
+  }
+  .markdown-katex-preview code {
+    font-weight: 500;
+  }
+  .markdown-katex-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+/*
+ * atom-markdown-katex custom style
+ */
+</style><style>/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+  color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+  color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #8959a8;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: white;
+  color: #4d4d4c;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"></head><body class="markdown-katex-preview"><h1 class="line" data-line="0">Welcome to Chapter 1</h1>
+<p class="line" data-line="2">So its time to get ready for chapter 1 exercises.</p>
+<p class="line" data-line="4">Let&#x2019;s get start with a brief overview of this handout:</p>
+<ul>
+<li><p class="line" data-line="6">You will find the following folders:
+<ul>
+<li><p class="line" data-line="7"><strong>AEM</strong> - contains all files required to set the AEM instances environment</p></li>
+<li><p class="line" data-line="8"><strong>MongoDB</strong> - same has the above but for the MongoDB instances</p></li>
+<li><p class="line" data-line="9"><strong>JCR</strong> - environment setup to launch Apache Jackrabbit Oak standalone process</p></li>
+</ul></p></li>
+<li><p class="line" data-line="10">Each folder will boot different virtual machines so we can isolate the instances</p></li>
+<li><p class="line" data-line="11">If you are following the lesson videos you might find some variations from the video examples and the configuration that you will find on your environment (mostly differences on ip addresses)</p></li>
+</ul>
+<p class="line" data-line="13">You will also find all command helpers in this file</p>
+<h2 class="line" data-line="15">Chapter 1 folder</h2>
+<pre><code class="language-sh">&gt; ls .
+AEM
+README.md
+lesson1
+</code></pre>
+<h2 class="line" data-line="25">Boot MongoDB Environment</h2>
+<p class="line" data-line="26">Raise one virtual machine dedicated to MongoDB standalone instance</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> lesson1/MongoDB
+vagrant up
+</code></pre>
+<p class="line" data-line="31">Verify instance status</p>
+<pre><code class="language-bash">vagrant status mongod
+</code></pre>
+<h2 class="line" data-line="35">Launch MongoDB Instance</h2>
+<p class="line" data-line="36">Now that we have an running vm dedicated to MongoDB is time to setup the instance</p>
+<p class="line" data-line="38">Let&#x2019;s check if <code>mongod</code> is properly installed</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> lesson1/MongoDB
+vagrant ssh mongod
+mongod -version
+</code></pre>
+<p class="line" data-line="44">Let&#x2019;s boot up <code>mongod</code></p>
+<pre><code class="language-bash">mongod --dbpath data --storageEngine wiredTiger --logpath data/<span class="hljs-built_in">log</span> --fork
+</code></pre>
+<p class="line" data-line="48">Alternatively you can also run the following command:</p>
+<pre><code class="language-bash">mongod <span class="hljs-_">-f</span> mongod.conf
+</code></pre>
+<p class="line" data-line="52">We recommend you to proceed with the first command so you can get a better understanding of different options we are setting MongoDB with.</p>
+<h2 class="line" data-line="54">Boot Jackrabbit Oak Standalone</h2>
+<p class="line" data-line="55">For the purposed exercises on Jackrabbit Oak Standalone we will need to boot and virtual machine where we  should install the JCR standalone module</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> lesson1/JCR
+vagrant up jcr
+</code></pre>
+<p class="line" data-line="60">Let&#x2019;s check if the image is correctly boot up</p>
+<pre><code class="language-bash">vagrant status jcr
+</code></pre>
+<p class="line" data-line="64">If all went well now it&#x2019;s time to setup the JCR</p>
+<h2 class="line" data-line="66">Launch JCR Standalone</h2>
+<p class="line" data-line="67">We need to install in the <code>jcr</code> instance oak-run and point it to the previously instantiated <code>mongod</code> instance.<br>
+For this particular setup we are going to use <code>screen</code> to run our instance of oak-run on the background.</p>
+<pre><code class="language-bash">vagrant ssh jcr
+screen <span class="hljs-_">-a</span>
+java -jar /vagrant/oak-run-1.4-SNAPSHOT.jar server http://localhost:7979 Oak-Mongo --db oak --host 192.168.11.100 --port 27017
+</code></pre>
+<p class="line" data-line="74">To detach from the loaded screen just press <code>ctrl+a+d</code></p>
+<h2 class="line" data-line="76">Mount Webdav JCR folder</h2>
+<p class="line" data-line="77">One of the options we have to drill down on the data contained on the content repository is through it&#x2019;s <a href="https://en.wikipedia.org/wiki/WebDAV">Webdav</a> plugin.<br>
+This will be a bit different for each version of the OS that you might be running so let&#x2019;s highlight the most common ones:</p>
+<h3 class="line" data-line="80">Windows</h3>
+<ol>
+<li><p class="line" data-line="81">Go to your Windows Explorer address bar and type paste the following</p></li>
+</ol>
+<ul>
+<li><p class="line" data-line="82"><code>\\192.168.11.200@7979\webdav\default</code></p></li>
+<li><p class="line" data-line="83">Once the system requires you to provide user name and password
+<ul>
+<li><p class="line" data-line="84">user = <code>admin</code></p></li>
+<li><p class="line" data-line="85">password = <code>admin</code></p></li>
+</ul></p></li>
+</ul>
+<h3 class="line" data-line="87">MacOSX</h3>
+<ol>
+<li><p class="line" data-line="88">Go to Finder -&gt; Go -&gt; Connect To Server</p></li>
+<li><p class="line" data-line="89">On the server address please type</p></li>
+</ol>
+<ul>
+<li><p class="line" data-line="90"><code>http://192.168.11.200:7979/webdav/default</code></p></li>
+</ul>
+<ol start="3">
+<li><p class="line" data-line="91">Once the system requires you to provide user name and password</p></li>
+</ol>
+<ul>
+<li><p class="line" data-line="92">user = <code>admin</code></p></li>
+<li><p class="line" data-line="93">password = <code>admin</code></p></li>
+</ul>
+<h2 class="line" data-line="95">Install AEM software on local author folder</h2>
+<p class="line" data-line="96">To boot the AEM environment and to have a correct installation you need to copy your version of AEM and place it under the following folder:</p>
+<pre><code class="language-bash">cp YOUR_AEM_VERSION_JAR AEM/author/cq-author-p4502.jar
+</code></pre>
+<h2 class="line" data-line="101">Boot AEM Environment</h2>
+<p class="line" data-line="102">Raise one virtual machine dedicated to AEM standalone instance</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> lesson1/AEM
+vagrant up
+</code></pre>
+<p class="line" data-line="107">Verify instance status</p>
+<pre><code class="language-bash">vagrant status aem
+</code></pre>
+<h2 class="line" data-line="112">Launch AEM Instance</h2>
+<p class="line" data-line="113">Once we have an environment for our AEM installation, its time to launch our <code>author</code> instance</p>
+<pre><code class="language-bash">vagrant ssh
+<span class="hljs-comment">#let&apos;s create a screen</span>
+screen <span class="hljs-_">-a</span>
+java -Xmx2g -XX:MaxPermSize=512m -jar /vagrant/cq-author-p4502.jar -r crx3,crx3mongo -Doak.mongo.uri=<span class="hljs-string">&quot;mongodb://192.168.11.100:27017&quot;</span>
+</code></pre>
+<p class="line" data-line="121">To detach from the loaded screen just press ctrl+a+d</p>
+<h2 class="line" data-line="123">Stop Instances</h2>
+<p class="line" data-line="124">Make sure to stop the vagrant VM&#x2019;s after you finished the exercises.</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> MongoDB
+vagrant halt
+<span class="hljs-built_in">cd</span> ../AEM
+vagrant halt
+<span class="hljs-built_in">cd</span> ../JCR
+vagrant halt
+</code></pre>
+<p class="line" data-line="135"></p></body></html>

@@ -3,6 +3,7 @@
 So its time to get ready for chapter 1 exercises.
 
 Let's get start with a brief overview of this handout:
+
 - You will find the following folders:
   - **AEM** - contains all files required to set the AEM instances environment
   - **MongoDB** - same has the above but for the MongoDB instances
