@@ -42,9 +42,9 @@ As previously mentioned you will need to place your AEM jar file on a specific l
 Once you have it placed there and all the other requirements meet we are ready to start placing on this root location all the different week handouts.
 
 # Welcome to Chapter 1
-For detailed exercise instructions you should read the pdf file that is included in the chapter1 directory:
+For detailed exercise instructions you should read the html file that is included in the chapter1 directory:
 ```bash
-chapter1/README.pdf
+chapter1/README.html
 ```
 There, you will find instructions to help you complete the homework assignments.
 
