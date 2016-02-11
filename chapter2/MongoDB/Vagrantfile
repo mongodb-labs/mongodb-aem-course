@@ -7,8 +7,8 @@ Vagrant.configure(2) do |config|
          v.customize ["modifyvm", :id, "--cpus", "2", "--memory", "3072"]
       end
 
-      mongod.vm.network :private_network, ip: "192.168.19.100"
-      mongod.vm.hostname = "mongodb.vagrant.dev"
+      mongod.vm.network :private_network, ip: "192.168.14.100"
+      mongod.vm.hostname = "mongodb.mongodb.course"
       mongod.vm.provision :shell, path: "provision-mongod", args: ENV['ARGS']
     end
 end
