@@ -1,14 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 Vagrant.configure(2) do |config|
 
   config.vm.box = "ubuntu/trusty64"
+  config.vm.synced_folder "./shared/", "/vagrant/"
+  config.vm.box_check_update = false
   config.vm.define "mongod" do |mongod|
-
-      mongod.vm.provider "virtualbox" do |v|
-         v.customize ["modifyvm", :id, "--cpus", "2", "--memory", "3072"]
-      end
-
-      mongod.vm.network :private_network, ip: "192.168.14.100"
-      mongod.vm.hostname = "mongodb.mongodb.course"
-      mongod.vm.provision :shell, path: "provision-mongod", args: ENV['ARGS']
+    mongod.vm.provider "virtualbox" do |v|
+      v.customize ["modifyvm", :id, "--cpus", "2", "--memory", "1072"]
+      v.name = "mongod"
     end
+
+    mongod.vm.network :private_network, ip: "192.168.12.100"
+    mongod.vm.hostname = "mongodb.mongodb.course"
+    mongod.vm.provision :shell, path: "provision-mongod", args: ENV['ARGS']
+  end
 end

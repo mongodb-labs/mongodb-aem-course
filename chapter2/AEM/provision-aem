@@ -20,7 +20,7 @@ function install_aem(){
 	export AEM_USER=aem
 	export AEM_JAR=/vagrant/cq-author-p4502.jar
 	##TODO need to change this for a more suitable setting
-	export MONGODB_URI=mongodb://192.168.14.100
+	export MONGODB_URI=mongodb://192.168.12.100
 	echo "Create folders under shared vagrant dir"
 	mkdir $AEM_ROOT
 	chmod 777 $AEM_ROOT 
