@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     config.vm.define "aem#{i}" do |server|
       server.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--cpus", "2"]
-        vb.name = "aem#{i}"
+        vb.name = "aem#{i}-chapter2"
         vb.memory = 3072
       end
       server.vm.hostname = "aem#{i}.mongodb.course"

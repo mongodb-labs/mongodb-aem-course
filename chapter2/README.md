@@ -1,4 +1,3 @@
-s
 # Chapter 2
 Over the lessons of this chapter we will be focussing on the following aspects
 - Understand the different data formats that AEM stores in MongoDB
@@ -8,10 +7,34 @@ Over the lessons of this chapter we will be focussing on the following aspects
 - How to boot AEM instances to MongoDB
 
 ## Chapter handout structure
-For this chapter handout we are going to assume that you have completed chapter 1 and that you should drop this folder
+For this chapter handout we are going to assume that you have downloaded chapter 1 and is using the same root folder.
 
+This chapter will contain:
 - mongodb instance: virtual machine that where we will be installing a standalone MongoDB instance
-- aem instance: here we will be installing the AEM and connecting that to MongoDB instance
+- aem instances: here we will be installing the 2 AEM and connecting those to MongoDB instance
+- content folder that later will be used to import information.
+
+```sh
+ls
+> AEM       README.md chapter2  chapter1
+tree chapter2
+|-- AEM
+|   |-- Vagrantfile
+|   `-- provision-aem
+|-- MongoDB
+|   |-- Vagrantfile
+|   |-- provision-mongod
+|   `-- shared
+|       `-- mongod.conf
+|-- README.md
+`-- content
+    |-- addgroup.1.png
+    |-- angelina.png
+    |-- brad.png
+    |-- createuser.1.png
+    |-- createuser.2.png
+    `-- crxde_lite.1.png
+```
 
 Do not forget that for a correct installation and operation of *aem* instances you need to have a copy and license of your AEM 6.0 or 6.1 in the _AEM/author_ folder
 
@@ -97,6 +120,14 @@ vagrant halt
 
 ## AEM Instructions
 
+### Connect to CRXDE Lite
+CRXD Lite is a repository browser/editor that enables users to manage repository nodes.
+To connect to this tool one should do the following:
+- Connect to an CRXDE Lite: [http://192.168.12.101:4502/crx/de/index.jsp](http://192.168.12.101:4502/crx/de/index.jsp)
+
+![create user step 1](./content/crxde_lite.1.png "Create User Menu")
+
+
 ### Create Users
 Over the exercises for this chapter creation of different users will be required.
 To accomplish this you should perform the following steps
@@ -119,7 +150,7 @@ The following instructions will enable that:
 
 
 ## Potential Issues
-Dealing with homebrewed virtual machines can sometimes lead to unexpected situations.
+Dealing with home brewed virtual machines can sometimes lead to unexpected situations.
 
 Some these issues may lead to incorrect boot up of the AEM or MongoDB instances.
 
@@ -143,3 +174,15 @@ mongo admin --eval 'db.shutdownServer()'
 rm -rf /tmp/mongodb-27017.sock
 ```
 - relaunch `mongod` process
+
+### Zombie Virtual Machines
+In some cases, where we forget to destroy the vagrant machines or that might contain the same name (different chapters will launch similar VMs) VirtualBox can generate conflicts.
+To avoid this situations you should check the following steps:
+- Run `VBoxManage` to list the running VMs
+```sh
+VBoxManage list vms
+```
+- Select the VM that conflicts and remove it
+```sh
+VBoxManage unregister NAME_OF_VM --delete
+```
