@@ -31,8 +31,8 @@ function install_mongod(){
 
 function update_repo(){
 	echo "Install MongoDB Enterprise Repository"
-	echo "deb http://repo.mongodb.com/apt/ubuntu "$(lsb_release -sc)"/mongodb-enterprise/stable multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-enterprise.list
-	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+	echo "deb http://repo.mongodb.com/apt/ubuntu "$(lsb_release -sc)"/mongodb-enterprise/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-enterprise.list
+	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 	echo "Update Repositoryies"
 	sudo apt-get update -y
 	echo "Installing MongoDB Enterprise Dependencies"
