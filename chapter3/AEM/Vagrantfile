@@ -4,19 +4,17 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.box_check_update = false
-  config.vm.synced_folder "../../AEM/author/", "/vagrant"
-
+  config.vm.synced_folder "../../AEM/author", "/vagrant"
   (1..2).each do |i|
     config.vm.define "aem#{i}" do |server|
       server.vm.provider "virtualbox" do |vb|
-		vb.customize ["modifyvm", :id, "--cpus", "2"]
-        vb.name = "aem#{i}"
-        vb.memory = 4096
+        vb.customize ["modifyvm", :id, "--cpus", "2"]
+        vb.name = "aem#{i}-chapter3"
+        vb.memory = 3072
       end
       server.vm.hostname = "aem#{i}.mongodb.course"
-      server.vm.network :private_network, ip: "192.168.14.10#{i}"
+      server.vm.network :private_network, ip: "192.168.13.10#{i}"
       server.vm.provision :shell, path: "provision-aem", args: ENV['ARGS']
     end
   end
-
 end

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Bash script for provisioning the AEM author instances
+# Bash script for provisioning the MongoDB instances
 
 set -e
 set -x
@@ -17,13 +17,16 @@ function config(){
 
 function install_mongod(){
 	echo "Install MongoDB Enterprise"
-	sudo apt-get install -y mongodb-enterprise-server mongodb-enterprise-shell
-
-	sudo killall mongod
+	sudo apt-get install -y --force-yes mongodb-enterprise=3.0.8 mongodb-enterprise-server=3.0.8 mongodb-enterprise-shell=3.0.8
+	sudo sh -c "killall mongod; true"
 	mkdir -p /home/vagrant/data
 	chmod -R 777 /home/vagrant/data
 	chown -R mongodb:mongodb /home/vagrant/data
-	
+
+  cp /vagrant/mongod.conf /home/vagrant
+
+  echo "Set LC_ALL=C to .profile"
+  sudo echo "export LC_ALL=C" >> /home/vagrant/.profile
 }
 
 function update_repo(){
@@ -34,49 +37,18 @@ function update_repo(){
 	sudo apt-get update -y
 	echo "Installing MongoDB Enterprise Dependencies"
 	sudo apt-get install -y libgssapi-krb5-2 libsasl2-2 libssl1.0.0 libstdc++6 snmp
-	
+
 }
 
 
 function config(){
-	echo "Disable THP - http://docs.mongodb.org/master/tutorial/transparent-huge-pages/"
-	echo "
-	#!/bin/sh
-	### BEGIN INIT INFO
-	# Provides:          disable-transparent-hugepages
-	# Required-Start:    $local_fs
-	# Required-Stop:
-	# X-Start-Before:    mongod mongodb-mms-automation-agent
-	# Default-Start:     2 3 4 5
-	# Default-Stop:      0 1 6
-	# Short-Description: Disable Linux transparent huge pages
-	# Description:       Disable Linux transparent huge pages, to improve
-	#                    database performance.
-	### END INIT INFO
+  sudo su
+	# disable THP
+  echo -e "never" > /sys/kernel/mm/transparent_hugepage/enabled
+  echo -e "never" > /sys/kernel/mm/transparent_hugepage/defrag
 
-	case $1 in
-	  start)
-	    if [ -d /sys/kernel/mm/transparent_hugepage ]; then
-	      thp_path=/sys/kernel/mm/transparent_hugepage
-	    elif [ -d /sys/kernel/mm/redhat_transparent_hugepage ]; then
-	      thp_path=/sys/kernel/mm/redhat_transparent_hugepage
-	    else
-	      return 0
-	    fi
-
-	    echo 'never' > ${thp_path}/enabled
-	    echo 'never' > ${thp_path}/defrag
-
-	    unset thp_path
-	    ;;
-	esac
-	" > /etc/init.d/disable-transparent-hugepages
-	sudo chmod 755 /etc/init.d/disable-transparent-hugepages
-	sudo update-rc.d disable-transparent-hugepages defaults
-	
-	
-	echo "Set LC_ALL=C to .profile"
-	sudo echo "export LC_ALL=C" >> /home/vagrant/.profile
+	# disable mongod upstart service
+	echo 'manual' | sudo tee /etc/init/mongod.override
 }
 
 
