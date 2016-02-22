@@ -138,7 +138,7 @@ to detach don't forget to press `ctrl + a + d` keys
 
 For monitoring MongoDB instances our distribution comes with a few different shell based tools:
 
-#### Mongostat
+#### [Mongostat](https://docs.mongodb.org/manual/reference/program/mongostat/)
 
 ```sh
 mongostat --host 192.168.13.100:30000
@@ -147,10 +147,10 @@ mongostat --host 192.168.13.100:30000
 To have the full view of all nodes in a Replica Set you need pass `--discover`
 
 ```sh
-mongostat --host 192.168.13.100:30000
+mongostat --host 192.168.13.100:30000 --discover
 ```
 
-#### Mongotop
+#### [Mongotop](https://docs.mongodb.org/manual/reference/program/mongotop/)
 
 ```sh
 mongotop --host 192.168.13.100:30000
