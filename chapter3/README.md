@@ -57,10 +57,10 @@ mongo --host 192.168.13.100:30000
 Once we are on the MongoDB shell we need to provide the following instructions
 
 ```javascript
-var rsconf = {'_id': 'AEM', 'members': [
-  {'_id':0, 'host': '192.168.13.100:30000' },
-  {'_id':1, 'host': '192.168.13.101:30000' },
-  {'_id':2, 'host': '192.168.13.102:30000' },
+var rsconf = {'_id': 'CHAPTER3', 'members': [
+  {'_id':0, 'host': '192.168.13.100:40000' },
+  {'_id':1, 'host': '192.168.13.101:40000' },
+  {'_id':2, 'host': '192.168.13.102:40000' },
 ]}
 
 rs.initiate(rsconf)
@@ -129,7 +129,7 @@ Now we want to boot up our AEM instance (just one for now)
 vagrant ssh aem1
 screen -a
 # raises the instance enabling access from the jmxremote console
-java -Dcom.sun.management.jmxremote.port=8463 -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false -Xmx2g -XX:MaxPermSize=512m -jar /home/vagrant/aem/cq-author-p4502.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.13.100:30000,192.168.13.101:30000,192.168.13.102:30000/?replicaSet=AEM"
+java -Dcom.sun.management.jmxremote.port=8463 -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false -Xmx2g -XX:MaxPermSize=512m -jar /home/vagrant/aem/cq-author-p4502.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.13.100:40000,192.168.13.101:40000,192.168.13.102:40000/?replicaSet=CHAPTER3"
 ```
 to detach don't forget to press `ctrl + a + d` keys
 
