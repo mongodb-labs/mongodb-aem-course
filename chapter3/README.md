@@ -117,7 +117,7 @@ Now we want to boot up our AEM instance (just one for now)
 vagrant ssh aem1
 screen -a
 #raise the process connecting to our recently created Replica Set "mongodb://192.168.13.100:30000,192.168.13.101:30000,192.168.13.102:30000/?replicaSet=AEM"
-java -Xmx2g -XX:MaxPermSize=512m -jar /home/vagrant/aem/cq-author-p4502.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.13.100:30000,192.168.13.101:30000,192.168.13.102:30000/?replicaSet=AEM"
+java -Xmx2g -XX:MaxPermSize=512m -jar /vagrant/aem/cq-author-p4502.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.13.100:30000,192.168.13.101:30000,192.168.13.102:30000/?replicaSet=AEM"
 ```
 to detach don't forget to press `ctrl + a + d` keys
 
