@@ -43,7 +43,7 @@ We want o enable MongoDB to belong to **AEM** Replica Set
 
 ```sh
 screen -a
-mongod --dbpath data --storageEngine wiredTiger --port 30000 --replSet AEM
+mongod --dbpath data --storageEngine wiredTiger --port 40000 --replSet AEM
 ```
 
 Doing this set of instructions you are placed in a screen shell meaning that to get out without killing the process you need to press `ctrl + a + d` keys  
@@ -52,7 +52,7 @@ Doing this set of instructions you are placed in a screen shell meaning that to 
 ### Initiate Replica Set configuration
 After repeating the previous instruction on all different VM's (mongod0, mongod1, mongod2) we need to initiate our Replica Set
 ```sh
-mongo --host 192.168.13.100:30000
+mongo --host 192.168.13.100:40000
 ```
 Once we are on the MongoDB shell we need to provide the following instructions
 
@@ -70,7 +70,7 @@ rs.initiate(rsconf)
 If we want to give the Replica Set a more hierarchical configuration we can. To do that we need the following instructions:
 
 ```sh
-mongo --host 192.168.13.100:30000
+mongo --host 192.168.13.100:40000
 ```
 Once in the MongoDB shell:
 
@@ -116,8 +116,8 @@ Now we want to boot up our AEM instance (just one for now)
 ```sh
 vagrant ssh aem1
 screen -a
-#raise the process connecting to our recently created Replica Set "mongodb://192.168.13.100:30000,192.168.13.101:30000,192.168.13.102:30000/?replicaSet=AEM"
-java -Xmx2g -XX:MaxPermSize=512m -jar /vagrant/aem/cq-author-p4502.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.13.100:30000,192.168.13.101:30000,192.168.13.102:30000/?replicaSet=AEM"
+#raise the process connecting to our recently created Replica Set "mongodb://192.168.13.100:40000,192.168.13.101:40000,192.168.13.102:40000/?replicaSet=AEM"
+java -Xmx2g -XX:MaxPermSize=512m -jar /vagrant/aem/cq-author-p4502.jar -r crx3,crx3mongo -Doak.mongo.uri="mongodb://192.168.13.100:40000,192.168.13.101:40000,192.168.13.102:40000/?replicaSet=AEM"
 ```
 to detach don't forget to press `ctrl + a + d` keys
 
@@ -141,17 +141,17 @@ For monitoring MongoDB instances our distribution comes with a few different she
 #### [Mongostat](https://docs.mongodb.org/manual/reference/program/mongostat/)
 
 ```sh
-mongostat --host 192.168.13.100:30000
+mongostat --host 192.168.13.100:40000
 ```
 
 To have the full view of all nodes in a Replica Set you need pass `--discover`
 
 ```sh
-mongostat --host 192.168.13.100:30000 --discover
+mongostat --host 192.168.13.100:40000 --discover
 ```
 
 #### [Mongotop](https://docs.mongodb.org/manual/reference/program/mongotop/)
 
 ```sh
-mongotop --host 192.168.13.100:30000
+mongotop --host 192.168.13.100:40000
 ```
