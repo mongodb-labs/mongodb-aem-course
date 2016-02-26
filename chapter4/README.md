@@ -11,7 +11,7 @@ All the steps necessary to enable:
 
 For most of these operations you will have to perform certain tasks that are list on this document.
 
-## Instruction Set
+## Security Instruction Set
 
 
 ### Generate Keyfile
@@ -199,3 +199,25 @@ db.createUser(
 ```
 In order to be able to enable the AEM instance to perform all *CRUD* operations we should give it the `readWrite` built-in role.
 To enable the full set of ownership over that particular database we can also add `dbOwner` role.
+
+
+## Cloud Manager Instruction Set
+For enabling the setup with Cloud Manager we need to follow a few steps.
+
+
+### Cloud Manager Setup
+To use Cloud Manager we need to do the following:
+- Connect to https://www.mongodb.com/cloud
+- Create an new 30 day free account account
+  - If you have an existing account you might want to create a new one just for this course
+  - To avoid creating a new email account you can use a regular **gmail** by using the following format:
+    - your_gmail_user**+AEM**@gmail.com
+- Create a Group
+  - USERNAME+AEM
+
+### Enable Cloud Monitoring
+To enable monitoring we need to proceed with the following steps:
+- Install the [monitoring agent](https://docs.cloud.mongodb.com/tutorial/install-monitoring-agent-with-deb-package/)
+- Configure the agent [configuration file](https://docs.cloud.mongodb.com/reference/monitoring-agent/)
+
+Once these are both installed and configured we should be able to see the moving stats data.
