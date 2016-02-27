@@ -82,7 +82,6 @@ Which means that need to create our users first!
 ### Create Administrative Users & Roles
 On each deployment we should create certain administrative roles that have different responsability and should remain separate.
 
-
 #### `siteroot` User
 The `siteroot` user can be understood has the deployment and system administration user. This user will be used to add members to the Replica Set, create specific roles etc. This user should be used mainly has last resource user, therefore the name `root`
 
@@ -100,6 +99,13 @@ db.createUser({
 })
 ```
 
+#### Raise node with Replication enabled
+In order to proceed you will need to:
+- stop the instance
+- uncomment the replication section of the configuration file
+- relaunch the `mongod` instance
+- initialize the Replica Set
+
 ##### `versionAdmin` Role
 For compatability reasons we need to make sure we set our application users to use **MONGODB-CR** authentication mechanism.
 To do that we need to first create this `versionAdmin` role and add it to our `siteroot` user inorder for to update the authentication system version to allow **MONGODB-CR**. Simple right!?
@@ -109,14 +115,10 @@ db.createRole({
   role: "versionAdmin",
   privileges: [
     {
-      resource: {
-        db: "admin",
-        collection: "system.version"
-      },
-      actions: ["insert", "update", "find"],
-      roles: []
-    }
-  ]
+      resource: { db: "admin", collection: "system.version"},
+      actions: ["insert", "update", "find"]
+    }],
+  roles: []
 })
 ```
 
@@ -125,13 +127,16 @@ db.createRole({
 After we created the `versionAdmin` role we should add it to our system root level user `siteroot`.
 
 ```javascript
-db.update("siteroot", {
+db.updateUser("siteroot", {
   roles: [
     {role: "root", db: "admin"},
     {role: "versionAdmin", db: "admin"}
   ]
 })
 ```
+
+
+
 
 ##### Update `system.version`
 Now that our `siteroot` user has the role to update our authentication schema version by having role `versionAdmin` we need to do that before adding the application users, like the one that our developers will use to connect and the one we will be given AEM instances to connect to MongoDB.
@@ -140,15 +145,17 @@ Now that our `siteroot` user has the role to update our authentication schema ve
 use admin
 db.auth("siteroot", "super+root")
 db.system.version.update(
-  {_id: "authSchema", {$set: {currentVersion: 3}}, upsert=true
+  {_id: "authSchema", {$set: {currentVersion: 3}}}, upsert=true
 )
 ```
 
 Validate that `authSchema` is now on version `3`
 ```javascript
-db.system.version.find([{_id: "authSchema"}])
+db.system.version.find({_id: "authSchema"})
 3
 ```
+
+> From this moment on all new users will authenticate using `MONGODB-CR` authentication schema, except for `siteroot`
 
 
 #### `userAdmin` User
