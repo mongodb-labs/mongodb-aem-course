@@ -145,7 +145,7 @@ Now that our `siteroot` user has the role to update our authentication schema ve
 use admin
 db.auth("siteroot", "super+root")
 db.system.version.update(
-  {_id: "authSchema", {$set: {currentVersion: 3}}}, upsert=true
+  {_id: "authSchema"}, {$set: {currentVersion: 3}}, upsert=true
 )
 ```
 
@@ -157,6 +157,57 @@ db.system.version.find({_id: "authSchema"})
 
 > From this moment on all new users will authenticate using `MONGODB-CR` authentication schema, except for `siteroot`
 
+#### Initiate Replica Set with 1 member
+Now that we have a `root` administration user we can proceed to initialize our Replica Set.
+
+By initializing our Replica Set now we can guarantee that any new created users will be applied on all members of the Replica Set.
+
+So we begin by initializing the Replica Set with the previous standalone member only.
+
+```javascript
+use admin
+db.shutdownServer()
+```
+After we bring down the standalone instance we can uncomment the **replication** section of our `mongod.conf` configuration file so it looks similar to the following:
+
+```yaml
+systemLog:
+  destination: "file"
+  path: "/home/vagrant/data/mongod.log"
+  logAppend: true
+storage:
+  dbPath: "/home/vagrant/data"
+  journal:
+    enabled: true
+  engine: "wiredTiger"
+  wiredTiger:
+    engineConfig:
+      cacheSizeGB: 2
+    collectionConfig:
+      blockCompressor: "snappy"
+replication:
+   oplogSizeMB: 100
+   replSetName: "AEM-PROD"
+processManagement:
+  fork: true
+security:
+  keyFile: /vagrant/aem-replica-keyfile
+setParameter:
+  authenticationMechanisms: "MONGODB-CR"
+net:
+  port: 50000
+```
+After that we just need to raise our `mongod` instance:
+```bash
+mongod -f /home/vagrant/mongod.conf
+```
+and initialize our Replica Set with the previous Standalone instance:
+```javascript
+rs.initiate({_id: "AEM-PROD", members: [
+  { _id:0, host:"192.168.15.100:50000", priority: 10  }
+]})
+```
+> For now we just need initate with one single member
 
 #### `userAdmin` User
 The `userAdmin` user is created to enable the creation of other users.
@@ -166,7 +217,7 @@ You want to have this responsability separate from your System Administration or
 use admin
 db.createUser({
   user: "userAdmin",
-  pwd: "super+admin"
+  pwd: "super+admin",
   roles: [
     {
       role: "userAdminAnyDatabase",

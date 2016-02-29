@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>README</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(85, 85, 85); overflow: auto; background-color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(126, 126, 126); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(126, 126, 126); border-color: rgb(214, 214, 214); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top-width: 2px; border-top-style: dashed; border-top-color: rgb(214, 214, 214); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(214, 214, 214); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(3, 3, 3); background-color: rgb(240, 240, 240); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(245, 245, 245); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(3, 3, 3); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(214, 214, 214) rgb(214, 214, 214) rgb(199, 199, 199); background-color: rgb(240, 240, 240); }
+.markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+
+pre.editor-colors,
+.host {
+  background-color: #ffffff;
+  color: #555555;
+}
+pre.editor-colors .invisible-character,
+.host .invisible-character {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .indent-guide,
+.host .indent-guide {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .wrap-guide,
+.host .wrap-guide {
+  background-color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .gutter,
+.host .gutter {
+  color: #555555;
+  background: #ffffff;
+}
+pre.editor-colors .gutter .line-number.folded,
+.host .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+.host .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,
+.host .fold-marker:after {
+  color: #e87b00;
+}
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #555;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #e1e1e1;
+}
+pre.editor-colors.is-focused .cursor,
+.host.is-focused .cursor {
+  border-color: #000000;
+}
+pre.editor-colors.is-focused .selection .region,
+.host.is-focused .selection .region {
+  background-color: #afc4da;
+}
+pre.editor-colors.is-focused .line-number.cursor-line-no-selection,
+.host.is-focused .line-number.cursor-line-no-selection,
+pre.editor-colors.is-focused .line.cursor-line,
+.host.is-focused .line.cursor-line {
+  background-color: rgba(255, 255, 134, 0.34);
+}
+pre.editor-colors .source.gfm,
+.host .source.gfm {
+  color: #444;
+}
+pre.editor-colors .gfm .markup.heading,
+.host .gfm .markup.heading {
+  color: #111;
+}
+pre.editor-colors .gfm .link,
+.host .gfm .link {
+  color: #888;
+}
+pre.editor-colors .gfm .variable.list,
+.host .gfm .variable.list {
+  color: #888;
+}
+pre.editor-colors .markdown .paragraph,
+.host .markdown .paragraph {
+  color: #444;
+}
+pre.editor-colors .markdown .heading,
+.host .markdown .heading {
+  color: #111;
+}
+pre.editor-colors .markdown .link,
+.host .markdown .link {
+  color: #888;
+}
+pre.editor-colors .markdown .link .string,
+.host .markdown .link .string {
+  color: #888;
+}
+.host(.is-focused) .cursor {
+  border-color: #000000;
+}
+.host(.is-focused) .selection .region {
+  background-color: #afc4da;
+}
+.host(.is-focused) .line-number.cursor-line-no-selection,
+.host(.is-focused) .line.cursor-line {
+  background-color: rgba(255, 255, 134, 0.34);
+}
+.comment {
+  color: #999988;
+  font-style: italic;
+}
+.string {
+  color: #D14;
+}
+.string .source,
+.string .meta.embedded.line {
+  color: #5A5A5A;
+}
+.string .punctuation.section.embedded {
+  color: #920B2D;
+}
+.string .punctuation.section.embedded .source {
+  color: #920B2D;
+}
+.constant.numeric {
+  color: #D14;
+}
+.constant.language {
+  color: #606aa1;
+}
+.constant.character,
+.constant.other {
+  color: #606aa1;
+}
+.constant.symbol {
+  color: #990073;
+}
+.constant.numeric.line-number.find-in-files .match {
+  color: rgba(143, 190, 0, 0.63);
+}
+.variable {
+  color: #008080;
+}
+.variable.parameter {
+  color: #606aa1;
+}
+.keyword {
+  color: #222;
+  font-weight: bold;
+}
+.keyword.unit {
+  color: #445588;
+}
+.keyword.special-method {
+  color: #0086B3;
+}
+.storage {
+  color: #222;
+}
+.storage.type {
+  color: #222;
+}
+.entity.name.class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.entity.other.inherited-class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.entity.name.function {
+  color: #900;
+}
+.entity.name.tag {
+  color: #008080;
+}
+.entity.other.attribute-name {
+  color: #458;
+  font-weight: bold;
+}
+.entity.name.filename.find-in-files {
+  color: #E6DB74;
+}
+.support.constant,
+.support.function,
+.support.type {
+  color: #458;
+}
+.support.class {
+  color: #008080;
+}
+.invalid {
+  color: #F8F8F0;
+  background-color: #00A8C6;
+}
+.invalid.deprecated {
+  color: #F8F8F0;
+  background-color: #8FBE00;
+}
+.meta.structure.dictionary.json > .string.quoted.double.json,
+.meta.structure.dictionary.json > .string.quoted.double.json .punctuation.string {
+  color: #000080;
+}
+.meta.structure.dictionary.value.json > .string.quoted.double.json {
+  color: #d14;
+}
+.meta.diff,
+.meta.diff.header {
+  color: #75715E;
+}
+.css.support.property-name {
+  font-weight: bold;
+  color: #333;
+}
+.css.constant {
+  color: #099;
+}
+.bracket-matcher .region {
+  background-color: #C9C9C9;
+  opacity: .7;
+  border-bottom: 0 none;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1 id="chapter-4-project-implementation">Chapter 4 - Project Implementation</h1>
+<p>For this chapter we want to have a deep dive into steps necessary to bring an AEM deployment into production.
+All the steps necessary to enable:</p>
+<ul>
+<li>Deployment Architecture</li>
+<li>Sizing</li>
+<li>Security</li>
+<li>Monitoring</li>
+<li>Backup &amp; Recovery</li>
+<li>Automation</li>
+</ul>
+<p>For most of these operations you will have to perform certain tasks that are list on this document.</p>
+<h2 id="security-instruction-set">Security Instruction Set</h2>
+<h3 id="generate-keyfile">Generate Keyfile</h3>
+<p>To enable security on a MongoDB instance you need to start by creating a keyfile to store the authentication information.
+To setup a Replica Set you need to share the same keyfile amongst all Replica Set members.
+On each MongoDB VM you will find a shared folder called <code>/vagrant</code> that is shared amongst all MongoDB VMs, so one can use this shared folder to place the generated keyfile.</p>
+<blockquote>
+<p>In production environments you should not use shared folders but copy the keyfile to all members of that replica set</p>
+</blockquote>
+<pre class="editor-colors lang-bash"><div class="line"><span class="source shell"><span class="support function builtin shell"><span>cd</span></span><span>&nbsp;/vagrant</span></span></div><div class="line"><span class="source shell"><span>./generate_keyfile.sh</span></span></div><div class="line"><span class="source shell"><span>Generated&nbsp;</span><span class="string interpolated backtick shell"><span class="punctuation definition string begin shell"><span>`</span></span><span>aem-replica-keyfile</span><span class="punctuation definition string end shell"><span>`</span></span></span></span></div></pre>
+<h3 id="boot-up-instance-on-standalone-mode">Boot Up instance on Standalone mode</h3>
+<p>In order to fully configure the system under a secure environment we first need to create our users and set the authentication parameters on a node running on standalone mode.
+After one of the instances is correctly created, through the replication mechanism, all other instances will follow the same credentials and setup.</p>
+<p>To make this task easier with the handout material we can just simply edit our <code>mongod.conf</code> file.</p>
+<pre class="editor-colors lang-bash"><div class="line"><span class="source shell"><span>cat&nbsp;mongod.conf</span></span></div><div class="line"><span class="source shell"><span>systemLog:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;destination:&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>file</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;path:&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>/home/vagrant/data/mongod.log</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;logAppend:&nbsp;</span><span class="support function builtin shell"><span>true</span></span></span></div><div class="line"><span class="source shell"><span>storage:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;dbPath:&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>/home/vagrant/data</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;journal:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;&nbsp;&nbsp;enabled:&nbsp;</span><span class="support function builtin shell"><span>true</span></span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;engine:&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>wiredTiger</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;wiredTiger:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;&nbsp;&nbsp;engineConfig:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cacheSizeGB:&nbsp;2</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;&nbsp;&nbsp;collectionConfig:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blockCompressor:&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>snappy</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span class="comment line number-sign shell"><span class="punctuation definition comment shell"><span>#</span></span><span>replication:</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source shell"><span class="comment line number-sign shell"><span class="punctuation definition comment shell"><span>#</span></span><span>&nbsp;&nbsp;&nbsp;oplogSizeMB:&nbsp;100</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source shell"><span class="comment line number-sign shell"><span class="punctuation definition comment shell"><span>#</span></span><span>&nbsp;&nbsp;&nbsp;replSetName:&nbsp;&quot;AEM-PROD&quot;</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source shell"><span>processManagement:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;fork:&nbsp;</span><span class="support function builtin shell"><span>true</span></span></span></div><div class="line"><span class="source shell"><span>security:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;keyFile:&nbsp;/vagrant/aem-replica-keyfile</span></span></div><div class="line"><span class="source shell"><span>setParameter:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;authenticationMechanisms:&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>MONGODB-CR</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span>net:</span></span></div><div class="line"><span class="source shell"><span>&nbsp;&nbsp;port:&nbsp;50000</span></span></div></pre>
+<p>By default the file should already be set with the Replication settings disabled so we can go ahead and just spin out a <code>mongod</code> instance</p>
+<pre class="editor-colors lang-bash"><div class="line"><span class="source shell"><span>mongod&nbsp;-f&nbsp;mongod.conf</span></span></div></pre>
+<p>Once you connect to this machine you will find that the <code>mongo</code> shell prompt does not indicate any replication setup. If we actually run the <code>rs.status()</code> command we will get another indication that something else might be missing:</p>
+<pre class="editor-colors lang-bash"><div class="line"><span class="source shell"><span>mongo&nbsp;--port&nbsp;50000</span></span></div><div class="line"><span class="source shell"><span class="keyword operator redirect shell"><span>&gt;</span></span><span>&nbsp;</span><span class="meta function shell"><span class="entity name function shell"><span>rs.status</span></span><span class="punctuation definition arguments shell"><span>()</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope group shell"><span class="punctuation definition group shell"><span>{</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope group shell"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>ok</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&nbsp;</span><span class="support function builtin shell"><span>:</span></span><span>&nbsp;0,</span></span></span></div><div class="line"><span class="source shell"><span class="meta scope group shell"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>errmsg</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&nbsp;</span><span class="support function builtin shell"><span>:</span></span><span>&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>not&nbsp;authorized&nbsp;on&nbsp;admin&nbsp;to&nbsp;execute&nbsp;command&nbsp;{&nbsp;replSetGetStatus:&nbsp;1.0&nbsp;}</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>,</span></span></span></div><div class="line"><span class="source shell"><span class="meta scope group shell"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>code</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&nbsp;</span><span class="support function builtin shell"><span>:</span></span><span>&nbsp;13</span></span></span></div><div class="line"><span class="source shell"><span class="meta scope group shell"><span class="punctuation definition group shell"><span>}</span></span></span></span></div></pre>
+<p>Which means that need to create our users first!</p>
+<h3 id="create-administrative-users-roles">Create Administrative Users &amp; Roles</h3>
+<p>On each deployment we should create certain administrative roles that have different responsability and should remain separate.</p>
+<h4 id="-siteroot-user"><code>siteroot</code> User</h4>
+<p>The <code>siteroot</code> user can be understood has the deployment and system administration user. This user will be used to add members to the Replica Set, create specific roles etc. This user should be used mainly has last resource user, therefore the name <code>root</code></p>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span>use&nbsp;admin</span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>createUser</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;user</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>siteroot</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;pwd</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>super+root</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;roles</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace square js"><span>[</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>root</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>admin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;</span><span class="meta brace square js"><span>]</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span class="meta brace curly js"><span>}</span></span><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div></pre>
+<h4 id="raise-node-with-replication-enabled">Raise node with Replication enabled</h4>
+<p>In order to proceed you will need to:</p>
+<ul>
+<li>stop the instance</li>
+<li>uncomment the replication section of the configuration file</li>
+<li>relaunch the <code>mongod</code> instance</li>
+<li>initialize the Replica Set</li>
+</ul>
+<h5 id="-versionadmin-role"><code>versionAdmin</code> Role</h5>
+<p>For compatability reasons we need to make sure we set our application users to use <strong>MONGODB-CR</strong> authentication mechanism.
+To do that we need to first create this <code>versionAdmin</code> role and add it to our <code>siteroot</code> user inorder for to update the authentication system version to allow <strong>MONGODB-CR</strong>. Simple right!?</p>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>createRole</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;role</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>versionAdmin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;privileges</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace square js"><span>[</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resource</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>&nbsp;db</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>admin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;collection</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>system.version</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actions</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace square js"><span>[</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>insert</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>update</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>find</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace square js"><span>]</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace square js"><span>]</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;roles</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace square js"><span>[</span><span>]</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span class="meta brace curly js"><span>}</span></span><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div></pre>
+<h5 id="add-role-to-user">Add Role to User</h5>
+<p>After we created the <code>versionAdmin</code> role we should add it to our system root level user <code>siteroot</code>.</p>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>updateUser</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>siteroot</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;roles</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace square js"><span>[</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>role</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>root</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;db</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>admin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>role</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>versionAdmin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;db</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>admin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace curly js"><span>}</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;</span><span class="meta brace square js"><span>]</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span class="meta brace curly js"><span>}</span></span><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div></pre>
+<h5 id="update-system-version-">Update <code>system.version</code></h5>
+<p>Now that our <code>siteroot</code> user has the role to update our authentication schema version by having role <code>versionAdmin</code> we need to do that before adding the application users, like the one that our developers will use to connect and the one we will be given AEM instances to connect to MongoDB.</p>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span>use&nbsp;admin</span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>auth</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>siteroot</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>super+root</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>system</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="support constant dom js"><span>version</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>update</span></span><span class="punctuation definition arguments begin js"><span>(</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>_id</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>authSchema</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>$set</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>currentVersion</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="constant numeric js"><span>3</span></span><span class="meta brace curly js"><span>}</span><span>}</span><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;upsert</span><span class="keyword operator assignment js"><span>=</span></span><span class="constant language boolean true js"><span>true</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div></pre>
+<p>Validate that <code>authSchema</code> is now on version <code>3</code></p>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>system</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="support constant dom js"><span>version</span></span><span class="meta delimiter method period js"><span>.</span></span><span class="support function js"><span>find</span></span><span class="meta brace round js"><span>(</span></span><span class="meta brace curly js"><span>{</span></span><span>_id</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>authSchema</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span></span></div><div class="line"><span class="source js"><span class="constant numeric js"><span>3</span></span></span></div></pre>
+<blockquote>
+<p>From this moment on all new users will authenticate using <code>MONGODB-CR</code> authentication schema, except for <code>siteroot</code></p>
+</blockquote>
+<h4 id="-useradmin-user"><code>userAdmin</code> User</h4>
+<p>The <code>userAdmin</code> user is created to enable the creation of other users.
+You want to have this responsability separate from your System Administration or DBA to avoid becoming dependent one  single user to do both the adminstration of users and the administration of the cluster/database.</p>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span>use&nbsp;admin</span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>createUser</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;user</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>userAdmin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;pwd</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>super+admin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;roles</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace square js"><span>[</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>userAdminAnyDatabase</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>admin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;</span><span class="meta brace square js"><span>]</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span class="meta brace curly js"><span>}</span></span><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div></pre>
+<p>Validate that the user has been correctly created by calling the authentication method:</p>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>auth</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>userAdmin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>super+admin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div></pre>
+<h3 id="create-application-users">Create Application Users</h3>
+<p>Application users are generally created to allow applications and users that are not requiered to perform adminstrative tasks.
+For instance, AEM instances are not required to databases or collections apart from the one where AEM is going to store is information (default <code>aem-author</code>).
+It might require the need to perform actions on the database itself (create instances, indexes ...) during the initialization process but apart from that the only requirement is to insert, find, update and remove data from the application namespace itself.</p>
+<h4 id="create-aem-instance-author-user">Create AEM instance <code>author</code> user</h4>
+<p>To enable AEM instance to operate fully we are going to create an user named <code>author</code>:</p>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span>use&nbsp;admin</span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>auth</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>userAdmin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>super+admin</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>db</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>createUser</span></span><span class="punctuation definition arguments begin js"><span>(</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;user</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>author</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;pwd</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>super</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;roles</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace square js"><span>[</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>role</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>readWrite</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;db</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>aem-author</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>role</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>dbOwner</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;db</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>aem-author</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace curly js"><span>}</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace square js"><span>]</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div></pre>
+<p>In order to be able to enable the AEM instance to perform all <em>CRUD</em> operations we should give it the <code>readWrite</code> built-in role.
+To enable the full set of ownership over that particular database we can also add <code>dbOwner</code> role.</p>
+<h2 id="cloud-manager-instruction-set">Cloud Manager Instruction Set</h2>
+<p>For enabling the setup with Cloud Manager we need to follow a few steps.</p>
+<h3 id="cloud-manager-setup">Cloud Manager Setup</h3>
+<p>To use Cloud Manager we need to do the following:</p>
+<ul>
+<li>Connect to <a href="https://www.mongodb.com/cloud">https://www.mongodb.com/cloud</a></li>
+<li>Create an new 30 day free account account<ul>
+<li>If you have an existing account you might want to create a new one just for this course</li>
+<li>To avoid creating a new email account you can use a regular <strong>gmail</strong> by using the following format:<ul>
+<li>your_gmail_user<strong>+AEM</strong>@gmail.com</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Create a Group<ul>
+<li>USERNAME+AEM</li>
+</ul>
+</li>
+</ul>
+<h3 id="enable-cloud-monitoring">Enable Cloud Monitoring</h3>
+<p>To enable monitoring we need to proceed with the following steps:</p>
+<ul>
+<li>Install the <a href="https://docs.cloud.mongodb.com/tutorial/install-monitoring-agent-with-deb-package/">monitoring agent</a></li>
+<li>Configure the agent <a href="https://docs.cloud.mongodb.com/reference/monitoring-agent/">configuration file</a></li>
+</ul>
+<p>Once these are both installed and configured we should be able to see the moving stats data.</p></body>
+</html>
