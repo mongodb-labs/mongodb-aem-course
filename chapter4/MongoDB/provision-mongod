@@ -24,6 +24,7 @@ function install_mongod(){
 	chown -R mongodb:mongodb /home/vagrant/data
 
   cp /vagrant/mongod.conf /home/vagrant
+	chmod 777 /home/vagrant/mongod.conf
 
   echo "Set LC_ALL=C to .profile"
   sudo echo "export LC_ALL=C" >> /home/vagrant/.profile
