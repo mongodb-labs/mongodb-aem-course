@@ -28,7 +28,7 @@ function check_virtualbox {
 }
 
 function check_vagrant {
-  vagrant_exec=$(whereis vagrant)
+  vagrant_exec=$(which vagrant)
   if [ ! -z $vagrant_exec ]
   then
     vagrant_version=$($vagrant_exec -v)
